@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { analyzeTree } from "./_analyze";
+import { analyzeTree } from "./_analyze.js";
 
 // Camera screenshots arrive as large base64 payloads, so give Gemini room to run
 export const config = {

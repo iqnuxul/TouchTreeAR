@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
 import { createServer as createViteServer } from "vite";
-import { analyzeTree } from "./api/_analyze";
+import { analyzeTree } from "./api/_analyze.js";
 
 // Local development server. In production the app is served statically and
 // /api/* is handled by the Vercel serverless functions in ./api.

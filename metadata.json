@@ -1,0 +1,6 @@
+{
+  "name": "Tree Leaves AR",
+  "description": "An AR app that lets you put text as leaves on real trees using hand gestures and camera tracking.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

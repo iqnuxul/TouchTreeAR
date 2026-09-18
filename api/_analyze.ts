@@ -1,11 +1,18 @@
 import { GoogleGenAI, Type } from "@google/genai";
 
+/** Thrown when the deployment simply has no API key configured. */
+class MissingKeyError extends Error {}
+
 // Shared Gemini client with lazy initialization
 let aiClient: GoogleGenAI | null = null;
 function getGeminiClient(): GoogleGenAI {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
-    throw new Error("GEMINI_API_KEY environment variable is not configured. Please add it in the deployment's environment variables.");
+    throw new MissingKeyError(
+      "GEMINI_API_KEY is not set. Locally, create a .env file containing " +
+        "GEMINI_API_KEY=your_key (get one free at https://aistudio.google.com/apikey). " +
+        "On Vercel, add it under Settings > Environment Variables."
+    );
   }
   if (!aiClient) {
     aiClient = new GoogleGenAI({
@@ -142,7 +149,12 @@ export async function analyzeTree(image: unknown): Promise<Record<string, any>> 
 
     return { ok: true, ...parsedResult };
   } catch (err: any) {
-    console.error("Gemini analysis final error:", err);
+    if (err instanceof MissingKeyError) {
+      // A stack trace here would just bury the one line the reader needs
+      console.error(err.message);
+    } else {
+      console.error("Gemini analysis final error:", err);
+    }
     return {
       ok: false,
       error: err?.message || "Failed to analyze tree image with Gemini.",

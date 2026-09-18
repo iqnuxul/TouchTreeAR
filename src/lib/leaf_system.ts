@@ -36,11 +36,12 @@ export interface Cluster {
   pos: p5.Vector; // Current position of the cluster center
 }
 
+// Served from public/birds so the app has no external image dependency
 const BIRD_URLS = [
-  'https://raw.githubusercontent.com/iqnuxul/touchTree/main/Image%202%201.png',
-  'https://raw.githubusercontent.com/iqnuxul/touchTree/main/Image%202%202.png',
-  'https://raw.githubusercontent.com/iqnuxul/touchTree/main/Image%202%203.png',
-  'https://raw.githubusercontent.com/iqnuxul/touchTree/main/Image%202.png'
+  '/birds/bird-1.png',
+  '/birds/bird-2.png',
+  '/birds/bird-3.png',
+  '/birds/bird-4.png'
 ];
 
 export class LeafSystem {

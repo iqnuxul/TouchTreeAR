@@ -1,10 +1,11 @@
 # Tree Leaves AR
 
-Write text on real trees. Point your phone at a tree, let Gemini trace its
-branches, then use hand gestures to grow your words along them as leaves.
+Walk up to a tree, raise your camera, open your hand. Words you wrote drift
+down and settle among the branches, as if dressing the tree in a poem. Sweep
+a finger across them and the leaves turn into birds, and scatter.
 
-用手机对着一棵真实的树,让 Gemini 识别出枝干的走向,再用手势把你写的字
-当作叶子"长"在枝条上。
+你可以走到一棵树前,举起镜头,张开手掌。一段由你写下的文字慢慢落在树枝间,
+像给树穿上了一首诗。手指轻轻划过,树叶变成小鸟,随之散开。
 
 ![status](https://img.shields.io/badge/license-CC%20BY--NC%204.0-lightgrey)
 
